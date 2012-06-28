@@ -47,53 +47,59 @@ made to generate the HTML expected by Bootstrap while still generating the rich 
 
 #### ERB
 
-    <%= semantic_form_for @post do |f| %>
-      <%= f.semantic_errors %>
-      <%= f.inputs do %>
-        <%= f.input :title, :hint => "This is the title!" %>
-      <% end %>
-      <%= f.buttons do %>
-        <%= f.commit_button %>
-      <% end %>
-    <% end %>
+```html+erb
+<%= semantic_form_for @post do |f| %>
+  <%= f.semantic_errors %>
+  <%= f.inputs do %>
+    <%= f.input :title, :hint => "This is the title!" %>
+  <% end %>
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>
+```
 
 #### Formtastic
 
-    <form accept-charset="UTF-8" action="/posts" class="formtastic post" id="new_post" method="post">
-      <fieldset class="inputs">
-        <ol>
-          <li class="string input optional stringish" id="post_title_input">
-            <label class=" label" for="post_title">Title</label>
-            <input id="post_title" maxlength="255" name="post[title]" type="text" value="" />
-            <p class="inline-hints">This is the title!</p>
-          </li>
-        </ol>
-      </fieldset>
-      <fieldset class="buttons">
-        <ol>
-          <li class="commit button">
-            <input class="create" name="commit" type="submit" value="Create Post" />
-          </li>
-        </ol>
-      </fieldset>
-    </form>
+```html
+<form accept-charset="UTF-8" action="/posts" class="formtastic post" id="new_post" method="post">
+  <fieldset class="inputs">
+    <ol>
+      <li class="string input optional stringish" id="post_title_input">
+        <label class=" label" for="post_title">Title</label>
+        <input id="post_title" maxlength="255" name="post[title]" type="text" value="" />
+        <p class="inline-hints">This is the title!</p>
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset class="buttons">
+    <ol>
+      <li class="commit button">
+        <input class="create" name="commit" type="submit" value="Create Post" />
+      </li>
+    </ol>
+  </fieldset>
+</form>
+```
 
 #### Formtastic Bootstrap
 
-    <form accept-charset="UTF-8" action="/posts" class="formtastic post" id="new_post" method="post">
-      <fieldset class="inputs">
-        <div class="string clearfix optional stringish" id="post_title_input">
-          <label class="" for="post_title">Title</label>
-          <div class="input">
-            <input id="post_title" maxlength="255" name="post[title]" type="text" value="" />
-            <span class="help-inline">This is the title!</span>
-          </div>
-        </div>
-      </fieldset>
-      <div class="actions">
-        <input class="btn create commit" name="commit" type="submit" value="Create Post" />
+```html
+<form accept-charset="UTF-8" action="/posts" class="formtastic post" id="new_post" method="post">
+  <fieldset class="inputs">
+    <div class="string clearfix optional stringish" id="post_title_input">
+      <label class="" for="post_title">Title</label>
+      <div class="input">
+        <input id="post_title" maxlength="255" name="post[title]" type="text" value="" />
+        <span class="help-inline">This is the title!</span>
       </div>
-    </form>
+    </div>
+  </fieldset>
+  <div class="actions">
+    <input class="btn create commit" name="commit" type="submit" value="Create Post" />
+  </div>
+</form>
+```
 
 ### Major Difference in Behavior
 
@@ -131,14 +137,17 @@ Contributions are welcome!
 
 ## Usage
 
-#### Prepended Text
-To create a Prepended Text field, use the ```:prepend``` option.  This works on any text field input type, like ```:url```, ```:search```, and of course ```:string```
+#### Prepended or Appended Text
+To create a Prepended or Appended Text field, use the <tt>:prepend</tt> or <tt>:append</tt> option, respectively. This works on any text field input type, like <tt>:url</tt>, <tt>:search</tt>, and of course <tt>:string</tt>. Prepend and appand can be combined to wrap an input:
 
-    <%= semantic_form_for @user do |f| %>
-      <%= f.inputs do %>
-        <%= f.input :handle, :prepend => '@' %>
-      <% end %>
-    <% end %>
+```html+erb
+<%= semantic_form_for @user do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :handle, :prepend => '@' %>
+    <%= f.input :dollars, :prepend => '$', :append => '.00' %>
+  <% end %>
+<% end %>
+```
 
 ## Contributing
  
