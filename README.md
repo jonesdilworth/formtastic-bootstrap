@@ -1,14 +1,13 @@
 # Formtastic Bootstrap
 
-A [Formtastic](https://github.com/justinfrench/formtastic) form builder that creates markup suitable for the [Twitter Bootstrap](http://twitter.github.com/bootstrap/) framework.  In theory, it should just work.  Two great tastes in one!
-
-You can follow [FormBoot on twitter](http://twitter.com/FormBoot) for update announcements and other relevant info.
+A [Formtastic](https://github.com/justinfrench/formtastic) form builder that creates markup suitable for the [Twitter Bootstrap](http://twitter.github.com/bootstrap/) framework.
 
 ## Getting Started
 
 ### Dependencies
 
-Formtastic Bootstrap has only been tested with Ruby 1.9.2, Rails 3.1, Formtastic 2.0 and Twitter Bootstrap 1.3.
+ * Formtastic 2.1+
+ * Bootstrap 2.0+
 
 #### Installation
 
@@ -16,7 +15,7 @@ Install the gem with
 
     gem install formtastic-bootstrap
 
-Or add it to your Gemfile:
+Or add it to your Gemfile (*note*: must be included after Formtastic):
 
     gem 'formtastic-bootstrap'
 
@@ -34,16 +33,14 @@ Add the following line to the top of your <tt>application.css</tt> file:
     # app/assets/stylesheets/application.css
     *= require formtastic-bootstrap
 
-Make sure you've already downloaded and installed Formtastic!
-
 
 ## Formtastic vs. Formtastic Bootstrap
 
 
 ### Overview
 
-In general, Formtastic creates very verbose HTML whereas Bootstrap expects simpler HTML.  Every attempt has been
-made to generate the HTML expected by Bootstrap while still generating the rich HTML provided by Formtastic.  Here's a pretty typical (simplified) example of what Formtastic generates and what Formtastic Bootstrap generates.
+In general, Formtastic creates very verbose HTML whereas Bootstrap expects simpler HTML. Every attempt has been
+made to generate the HTML expected by Bootstrap while still generating the rich HTML provided by Formtastic. Here's a pretty typical (simplified) example of what Formtastic generates and what Formtastic Bootstrap generates:
 
 #### ERB
 
@@ -113,7 +110,7 @@ made to generate the HTML expected by Bootstrap while still generating the rich 
 
 Bootstrap is somewhat incomplete, and in a few cases an inference needed to be drawn to determine a course of action.  If you disagree with any of these choices, feel free to let me know.
 
-The gem also provides some "shim" CSS where Bootstrap is missing styles provided Formtastic.
+The gem also provides some "shim" CSS where Bootstrap is missing styles provided Formtastic. **NOTE:** The Twitter Bootstrap CSS is not included.
 
 ### Other
 
@@ -133,11 +130,12 @@ In particular:
 Contributions are welcome!
 
 * Formtastic's <tt>:country</tt> has not yet been implemented.
-* Twitter Bootstrap's Date Range, Prepend Checkbox and Appended Checkbox controls have not yet been implemented.
+* Twitter Bootstrap's Date Range, Prepend *Checkbox* and Appended *Checkbox* controls have not yet been implemented.
 
 ## Usage
 
 #### Prepended or Appended Text
+
 To create a Prepended or Appended Text field, use the <tt>:prepend</tt> or <tt>:append</tt> option, respectively. This works on any text field input type, like <tt>:url</tt>, <tt>:search</tt>, and of course <tt>:string</tt>. Prepend and appand can be combined to wrap an input:
 
 ```html+erb
@@ -153,7 +151,7 @@ To create a Prepended or Appended Text field, use the <tt>:prepend</tt> or <tt>:
  
 ### Contributors
 
-A big thank you [to all contributors](https://github.com/mjbellantoni/formtastic-bootstrap/contributors)!
+A big thank you [to all contributors](./contributors)!
 
 ### Submitting Issues
 
