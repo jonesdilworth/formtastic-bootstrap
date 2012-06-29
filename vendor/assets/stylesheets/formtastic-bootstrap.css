@@ -3,3 +3,13 @@
 .hidden {
 	display: none;
 }
+
+/*
+  Formtastic's helper .radio and .checkbox classes on the .control-group cause 
+  problems with the padding on the actual input elements of those types. This
+  resolves the issue without affecting compatibility with Formtastic.
+*/
+.control-group.radio,
+.control-group.checkbox {
+  padding-left: 0;
+}
