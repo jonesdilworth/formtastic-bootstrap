@@ -129,7 +129,6 @@ In particular:
 
 Contributions are welcome!
 
-* Formtastic's <tt>:country</tt> has not yet been implemented.
 * Twitter Bootstrap's Date Range, Prepend *Checkbox* and Appended *Checkbox* controls have not yet been implemented.
 
 ## Usage
@@ -176,7 +175,6 @@ If you're filing a bug, thank you!  Secondly, in the report please include:
 
 * Field Types
  * Basic Formtastic
-   * :country
    * :time_zone
  * Fancy Bootstrap Fields
    * Date Range
